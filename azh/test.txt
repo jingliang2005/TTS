@@ -1,0 +1,21 @@
+从已发布的模型列表中运行 tts 和声码器模型。（只需从列表中复制并粘贴完整的模型名称作为以下命令的参数。）
+tts --text "Text for TTS" \
+    --model_name "tts_models/zh-CN/baker/tacotron2-DDC-GST" \
+    --vocoder_name "vocoder_models/universal/libri-tts/fullband-melgan" \
+    --out_path azh/test-out.wav
+
+运行您自己的 TTS 模型（使用 Griffin-Lim 声码器）
+tts --text "Text for TTS" \
+    --model_path path/to/model.pth.tar \
+    --config_path path/to/config.json \
+    --out_path output/path/speech.wav
+
+运行您自己的 TTS 和声码器模型
+tts --text "Text for TTS" \
+    --model_path path/to/config.json \
+    --config_path path/to/model.pth.tar \
+    --out_path output/path/speech.wav \
+    --vocoder_path path/to/vocoder.pth.tar \
+    --vocoder_config_path path/to/vocoder_config.json
+
+
